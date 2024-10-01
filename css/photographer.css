@@ -1,0 +1,389 @@
+.img-heart {
+    width: 30px;
+    height: 30px;
+    background-image: url('../assets/images/heart-transparent.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    transition: background-image 0.3s;
+    background-size: 100% 100%;
+    margin-top: 22px;
+    margin-left: 5px;
+}
+
+.img-heart.active {
+    background-image: url('../assets/images/heart-red.jpg');
+}
+
+#contact_modal {
+    display: none;
+}
+
+.photograph-header {
+    background-color: #FAFAFA;
+    height: 300px;
+}
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.modal {
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 25%;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.modal header {
+    width: 100%;
+}
+
+.modal header img {
+    cursor: pointer;
+    height: 40px;
+}
+
+.modal header h2 {
+    font-size: 64px;
+    font-weight: normal;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    color: #312E2E;
+    font-size: 36px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+}
+
+form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.styleUrmsg {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+.logo {
+    height: 50px;
+    margin-left: 100px;
+}
+
+.txt_size {
+    height: 150px;
+    vertical-align: top;
+}
+
+.error {
+    display: none;
+    color: black;
+    font-size: 25px;
+}
+
+.formData[data-error]::after {
+    content: attr(data-error);
+    font-size: 0.4em;
+    color: #e54858;
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    text-align: right;
+    line-height: 0.3;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.formData[data-error-visible="true"]::after {
+    opacity: 1;
+}
+
+.formData[data-error-visible="true"] .text-control {
+    border: 2px solid #e54858;
+}
+
+.imgId {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    display: flex;
+    object-fit: inherit;
+    margin-left: 10%;
+}
+
+.imgGal {
+    height: 350px;
+    width: 100%;
+    margin: 10px;
+    object-fit: cover;
+}
+
+.photograph-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 30px;
+}
+
+.titleId {
+    font-size: 60px;
+    color: #D3573C;
+}
+
+.photograph-header h3 {
+    color: #901C1C;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+.photographer_media {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    column-gap: 100px;
+    row-gap: 50px;
+}
+
+.trier {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    font-size: 20px;
+}
+
+.like-price {
+    color: black;
+    border-radius: 6.25px;
+    mix-blend-mode: multiply;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.like-price-fixed {
+    position: fixed;
+    bottom: 0px;
+    right: 30px;
+    background-color: #db8876;
+    padding: 15px;
+    border-radius: 5px;
+    width: 26%;
+    height: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 150px; 
+    z-index: 1000;
+}
+
+.titleDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 13px;
+}
+
+.titleDiv h2 {
+    color: #D3573C;
+}
+
+.titleDiv h3 {
+    color: #901C1C;
+}
+
+.photograph-header,
+.photographer_media {
+    margin: auto 100px;
+}
+
+.likeDiv {
+    display: flex;
+}
+
+.price-day {
+    margin: 0;
+    font-size: 30px;
+}
+
+.black-heart {
+    width: 23px;
+    height: auto;
+    margin-left: 3px;
+}
+
+h3, h4 {
+    font-size: 25px;
+}
+.rectangle {
+    display: none;
+    position: absolute;
+    top: 53%;
+    left: 12%;
+    padding: 10px;
+    background-color: #901C1C;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 170px;
+    height: 170px;
+    border-radius: 5px;
+}
+
+.rectangle div {
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.rectangle div:last-child {
+    border-bottom: none;
+}
+
+.rectangle div:hover {
+    color: #ddd;
+    cursor: pointer;
+}
+
+#rectangle {
+    display: none;
+}
+
+#rectangle.visible {
+    display: block;
+}
+.slider-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.slider-container img {
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.5);
+    width: 1050px; 
+    height: 85%;
+    object-fit: cover;
+}
+
+.arrow-left, .arrow-right {
+    width: 96px;
+    height: 96px;
+    position: absolute;
+    top: 402px;
+    background-color: transparent;
+    font-size: 80px;
+    color: brown;
+    cursor: pointer;
+}
+
+.slider-container .arrow-left {
+    width: 40px;
+    height: auto;
+    z-index: 1100; 
+    cursor: pointer;
+    background-color: transparent;
+    margin-right: 1150px;
+    box-shadow: none;
+    object-fit: none;
+}
+
+.slider-container .arrow-right {
+    width: 40px;
+    height: auto;
+    z-index: 1100; 
+    cursor: pointer;
+    margin-left: 1150px;
+    background-color: transparent;
+    box-shadow: none;
+    object-fit: none;
+}
+
+.slider-container .close-button {
+    position: absolute;
+    top: 70px; 
+    right: 20px; 
+    width: 42px;
+    height: 42px;
+    z-index: 1100; 
+    cursor: pointer;
+    margin-right: 330px;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.image-title {
+    position: absolute;
+    bottom: 15px;
+    left: 22.1%;
+    color:#901C1C;
+    font-size: 35px;
+    max-width: 80%;
+    font-style:normal;
+    padding-top: 10px;
+}
+.slider-container video {
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.5);
+    width: 1050px;
+    height: 85%;
+    object-fit: cover;
+}

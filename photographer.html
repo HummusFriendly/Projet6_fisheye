@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <title>Fisheye - photographe </title>
+</head>
+
+<body>
+  <header>
+    <a href="http://127.0.0.1:5500/Front-End-Fisheye/index.html">
+      <img src="assets/images/logo.png" class="logo" />
+    </a>
+  </header>
+  <main id="main-wrapper" aria-hidden="false">
+    <div class="photograph-header">
+      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+    </div>
+    <button class="trier">Trier par</button>
+    <div class="rectangle" id="rectangle">
+      <div class ="pop">Popularité</div>
+      <div class="date">Date</div>
+      <div class="title_trier">Titre</div>
+    </div>
+    <div class="photographer_media"></div>
+  </div>
+  </main>
+  <div id="contact_modal">
+    <div class="modal" aria-hidden="true" role="dialog" aria-describedby="modalTitle">
+      <header>
+        <h2 class="nameModal">Contactez-moi</h2>
+        <div class="close">
+          <img src="assets/icons/close.svg" onclick="closeModal()" />
+        </div>
+      </header>
+      <div class="bground">
+        <div class="content">
+          <form>
+            <div>
+              <div class="formData">
+                <label>Prénom</label>
+                <input id="first" />
+              </div>
+              <span class="firstNameError error">Votre prénom doit contenir au moins 2 caractères</span>
+              <div class="formData">
+                <label>Nom</label>
+                <input id="last" />
+              </div>
+              <span class="lastNameError error">Votre Nom doit contenir au moins 2 caractères</span>
+              <div class="formData">
+                <label>Email</label>
+                <input id="email" />
+              </div>
+              <span class="emailNameError error">Votre mail n'est pas correct</span>
+              <div class="formData">
+                <label>Votre message</label>
+                <textarea class="styleUrmsg" id="urmsg" name="votre message" rows="10" cols="50"></textarea>
+              </div>
+              <span class="urmsgError error">Votre message doit contenir au moins 2 caractères</span>
+            </div>
+            <button class="contact_button modal-btn btn-submit" onclick="closeModal()">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/utils/sliderLidle.js"></script>
+  <script src="scripts/utils/sorting.js"></script>
+  <script src="mediaFactory.js"></script>
+  <script src="scripts/templates/templateMedia.js"></script>
+  <script src="scripts/pages/photographer.js"></script>
+  <script src="scripts/pages/contactForm.js"></script>
+  <div id="error-message"></div>
+</body>
+
+</html>
