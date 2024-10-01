@@ -7,7 +7,7 @@ function photographerTemplate(data) {
     function getUserCardDOM() {
         const article = document.createElement('article');
         const link = document.createElement('a');
-        link.setAttribute("href", `http://127.0.0.1:5500/Front-End-Fisheye/photographer.html?id=${id}`);
+        link.setAttribute("href", `http://127.0.0.1:5500/photographer.html?id=${id}`);
         const h1 = document.createElement('h1');
         h1.textContent = name;
         const h3 = document.createElement('h3');

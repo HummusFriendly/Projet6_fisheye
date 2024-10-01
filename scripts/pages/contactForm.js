@@ -6,10 +6,15 @@ function displayModal() {
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
+    console.log("Prénom:", firstNameInput.value);
+    console.log("Nom:", lastNameInput.value);
+    console.log("Email:", emailInput.value);
+    console.log("Message:", urmsgInput.value);
     firstNameInput.value = "";
     lastNameInput.value = "";
     emailInput.value = "";
     urmsgInput.value ="";
+    console.log()
 }
 //DOM ELEMENTS
 const submitButton = document.querySelector(".btn-submit");
@@ -33,6 +38,10 @@ const urmsgError = document.querySelector(".urmsgError")
 
   submitButton.addEventListener("click", (event) => {
       event.preventDefault();
+      console.log("Prénom:", firstNameInput.value);
+      console.log("Nom:", lastNameInput.value);
+      console.log("Email:", emailInput.value);
+      console.log("Message:", urmsgInput.value);
       modal.style.display ="none";
   });
 
