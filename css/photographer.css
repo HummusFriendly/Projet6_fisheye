@@ -42,15 +42,15 @@
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 25px;
     margin: auto;
     position: fixed;
-    top: 0;
-    left: 25%;
+    top: 40px;
+    left: 30%;
     margin: auto;
     z-index: 1020;
 }
@@ -208,7 +208,7 @@ h3 {
     color: black;
     border-radius: 6.25px;
     mix-blend-mode: multiply;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -253,7 +253,7 @@ h3 {
 
 .price-day {
     margin: 0;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .black-heart {
@@ -274,23 +274,61 @@ h3, h4 {
     background-color: #901C1C;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 170px;
-    height: 140px;
+    width: 150px;
+    height: 130px;
     border-radius: 5px;
 }
 
 .rectangle div {
     padding: 10px;
+    border-color: none;
+    border-right: none;
     border-bottom: 2px solid #ccc;
     cursor: pointer;
     font-size: 20px;
+
+}
+.pop {
+    padding: 10px;
+    background: none;
+    border-color:  #901C1C;
+    border-right:  #901C1C;
+    border-bottom: 2px solid #ccc;
+    cursor: pointer;
+    font-size: 17px;
+    color: white;
+}
+.date {
+    padding: 10px;
+    background: none;
+    border-color:  #901C1C;
+    border-right:  #901C1C;
+    border-bottom: 2px solid #ccc;
+    cursor: pointer;
+    font-size: 17px;
+    color: white;
+}
+.title_trier {
+    padding: 10px;
+    background: none;
+    border-color:  #901C1C;
+    border-right:  #901C1C;
+    border-bottom: 2px solid #ccc;
+    cursor: pointer;
+    font-size: 17px;
+    color: white;
 }
 
-.rectangle div:last-child {
+.rectangle button {
+    display: flex;
+    flex-direction: column;
+}
+
+.rectangle button:last-child {
     border-bottom: none;
 }
 
-.rectangle div:hover {
+.rectangle button:hover {
     color: #ddd;
     cursor: pointer;
 }

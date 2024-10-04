@@ -72,49 +72,49 @@ function photographerTemplate(photographer, media) {
             totalLikes += amount;
             likePriceText.textContent = `${totalLikes}`;
         }
-        
-sortedMedia.forEach((element, index) => {
-        const { title, likes } = element;
-        const article = document.createElement('article');
-        const mediaElement = createMedia(element); 
-        mediaElement.addEventListener('click', () => {
-            openImageSlider(index, sortedMedia); 
-        });
 
-        const titleDiv = document.createElement('div');
-        titleDiv.classList.add('titleDiv');
-        const likeDiv = document.createElement('div');
-        likeDiv.classList.add('likeDiv');
-        const h2 = document.createElement('h2');
-        h2.textContent = title;
-        let currentLikes = likes;
-        const h3 = document.createElement('h3');
-        h3.textContent = `${currentLikes} `;
-        const buttonHeart = document.createElement('button');
-        buttonHeart.type = 'button';
-        buttonHeart.classList.add('img-heart');
-        buttonHeart.addEventListener('click', function () {
-            if (this.classList.contains('active')) {
-                this.classList.remove('active');
-                currentLikes--;
-                h3.textContent = `${currentLikes} `;
-                updateTotalLikes(-1);
-            } else {
-                this.classList.add('active');
-                currentLikes++;
-                h3.textContent = `${currentLikes} `;
-                updateTotalLikes(1);
-            }
+        sortedMedia.forEach((element, index) => {
+            const { title, likes } = element;
+            const article = document.createElement('article');
+            const mediaElement = createMedia(element);
+            mediaElement.addEventListener('click', () => {
+                openImageSlider(index, sortedMedia);
+            });
+
+            const titleDiv = document.createElement('div');
+            titleDiv.classList.add('titleDiv');
+            const likeDiv = document.createElement('div');
+            likeDiv.classList.add('likeDiv');
+            const h2 = document.createElement('h2');
+            h2.textContent = title;
+            let currentLikes = likes;
+            const h3 = document.createElement('h3');
+            h3.textContent = `${currentLikes} `;
+            const buttonHeart = document.createElement('button');
+            buttonHeart.type = 'button';
+            buttonHeart.classList.add('img-heart');
+            buttonHeart.addEventListener('click', function () {
+                if (this.classList.contains('active')) {
+                    this.classList.remove('active');
+                    currentLikes--;
+                    h3.textContent = `${currentLikes} `;
+                    updateTotalLikes(-1);
+                } else {
+                    this.classList.add('active');
+                    currentLikes++;
+                    h3.textContent = `${currentLikes} `;
+                    updateTotalLikes(1);
+                }
+            });
+            likeDiv.appendChild(h3);
+            likeDiv.appendChild(buttonHeart);
+            titleDiv.appendChild(h2);
+            article.appendChild(mediaElement);
+            article.appendChild(titleDiv);
+            titleDiv.appendChild(likeDiv);
+            mediaContainer.appendChild(article);
         });
-        likeDiv.appendChild(h3);
-        likeDiv.appendChild(buttonHeart);
-        titleDiv.appendChild(h2);
-        article.appendChild(mediaElement);
-        article.appendChild(titleDiv);
-        titleDiv.appendChild(likeDiv);
-        mediaContainer.appendChild(article);
-    });
-}
+    }
     document.querySelector('.pop').addEventListener('click', () => sortByPopularity(media, getArticlesDom));
     document.querySelector('.date').addEventListener('click', () => sortByDate(media, getArticlesDom));
     document.querySelector('.title_trier').addEventListener('click', () => sortByTitle(media, getArticlesDom));
