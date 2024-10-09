@@ -8,7 +8,7 @@
     cursor: pointer;
     transition: background-image 0.3s;
     background-size: 100% 100%;
-    margin-top: 17px;
+    margin-top: 15px;
     margin-left: 5px;
 }
 
@@ -236,6 +236,7 @@ h3 {
 .titleDiv h2 {
     color: #D3573C;
     font-size: 20px;
+    margin-top: 0;
 }
 
 .titleDiv h3 {
@@ -249,6 +250,7 @@ h3 {
 
 .likeDiv {
     display: flex;
+    margin-bottom: 15px;
 }
 
 .price-day {

@@ -1,3 +1,13 @@
+- add liseuse wind pour aveugle accessibilité
+- mettre bon attribut html 
+- finir accesiblité, save github et poster sur open
+- add event listener pour slider avec fleche gauche droite et echappe ferme
+
+
+
+
+
+
 ok 1) Finir le code + css (ajd)
 ok 2) Restructurer le code (ajd):
 

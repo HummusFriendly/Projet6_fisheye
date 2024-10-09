@@ -1,3 +1,4 @@
+
 function openImageSlider(currentIndex, sortedMedia) {
     const sliderContainer = document.createElement('div');
     sliderContainer.classList.add('slider-container');
@@ -14,15 +15,14 @@ function openImageSlider(currentIndex, sortedMedia) {
             displayMedia = document.createElement('img');
             displayMedia.setAttribute("src", `assets/photos/${sortedMedia[index].image}`);
             displayMedia.setAttribute('alt', sortedMedia[index].title);
-        }
-        else if (sortedMedia[index].video) {
+        } else if (sortedMedia[index].video) {
             displayMedia = document.createElement('video');
             displayMedia.setAttribute("src", `assets/videos/${sortedMedia[index].video}`);
             displayMedia.setAttribute('controls', true);
             displayMedia.setAttribute('alt', sortedMedia[index].title);
         }
 
-        sliderContainer.insertBefore(displayMedia, imageTitle); 
+        sliderContainer.insertBefore(displayMedia, imageTitle);
     }
 
     const imageTitle = document.createElement('div');
@@ -30,16 +30,16 @@ function openImageSlider(currentIndex, sortedMedia) {
     imageTitle.textContent = sortedMedia[currentIndex].title;
     sliderContainer.appendChild(imageTitle);
 
-    loadMedia(currentIndex); 
+    loadMedia(currentIndex);
 
     const leftArrow = document.createElement('img');
     leftArrow.classList.add('arrow-left');
     leftArrow.setAttribute('src', 'assets/icons/next.png');
     leftArrow.setAttribute('alt', 'Précédent');
-    leftArrow.style.transform = 'rotate(180deg)'; 
+    leftArrow.style.transform = 'rotate(180deg)';
     leftArrow.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + sortedMedia.length) % sortedMedia.length;
-        loadMedia(currentIndex); 
+        loadMedia(currentIndex);
         imageTitle.textContent = sortedMedia[currentIndex].title;
     });
     sliderContainer.appendChild(leftArrow);
@@ -50,7 +50,7 @@ function openImageSlider(currentIndex, sortedMedia) {
     rightArrow.setAttribute('alt', 'Suivant');
     rightArrow.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % sortedMedia.length;
-        loadMedia(currentIndex); 
+        loadMedia(currentIndex);
         imageTitle.textContent = sortedMedia[currentIndex].title;
     });
     sliderContainer.appendChild(rightArrow);
@@ -59,9 +59,26 @@ function openImageSlider(currentIndex, sortedMedia) {
     closeButton.classList.add('close-button');
     closeButton.setAttribute('src', 'assets/icons/closeModal.png');
     closeButton.setAttribute('alt', 'Fermer');
-
     closeButton.addEventListener('click', () => {
         document.body.removeChild(sliderContainer);
+        document.removeEventListener('keydown', handleKeyDown);
     });
     sliderContainer.appendChild(closeButton);
+
+    function handleKeyDown(event) {
+        if (event.key === 'ArrowLeft') {
+            currentIndex = (currentIndex - 1 + sortedMedia.length) % sortedMedia.length;
+            loadMedia(currentIndex);
+            imageTitle.textContent = sortedMedia[currentIndex].title;
+        } else if (event.key === 'ArrowRight') {
+            currentIndex = (currentIndex + 1) % sortedMedia.length;
+            loadMedia(currentIndex);
+            imageTitle.textContent = sortedMedia[currentIndex].title;
+        } else if (event.key === 'Escape') {
+            document.body.removeChild(sliderContainer);
+            document.removeEventListener('keydown', handleKeyDown);
+        }
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
 }
